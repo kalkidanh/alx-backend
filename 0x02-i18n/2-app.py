@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" A basic flask app with a Babel object instance."""
+""" A flask app with a Babel object instance and localselector function."""
 
 from flask import Flask, render_template, request
 from flask_babel import Babel
@@ -11,7 +11,7 @@ babel = Babel(app)
 
 class Config(object):
     """ A Babel configuration class."""
-    LANGUAGES = {"en", "fr"}
+    LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
