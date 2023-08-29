@@ -4,6 +4,7 @@
 from flask import Flask, render_template, request
 from flask_babel import Babel
 
+
 app = Flask(__name__)
 babel = Babel(app)
 
@@ -21,7 +22,7 @@ app.config.from_object(Config)
 @babel.localselector
 def get_locale():
     """ Determine the best match with our supported languages."""
-    return request.accept_languages.best_match(app.config{"LANGUAGES"})
+    return request.accept_languages.best_match(app.config["LANGUAGES"])
 
 
 @app.route("/")
